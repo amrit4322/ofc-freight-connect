@@ -65,7 +65,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="mailto:info@ofc.com.au"
+                  href="mailto:sandip@ofclogistics.com.au"
                   className="flex items-start gap-4 p-4 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-bold text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">info@ofc.com.au</p>
+                    <p className="text-muted-foreground">sandip@ofclogistics.com.au</p>
                     <p className="text-sm text-accent mt-1">Click to email</p>
                   </div>
                 </a>

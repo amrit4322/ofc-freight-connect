@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoOnly from "@/assets/logo2.png";
+import logoText from "@/assets/logo-text2.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -21,14 +23,20 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">OFC</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className="font-bold text-lg text-foreground leading-tight">Overall Freight Carrier</p>
-              <p className="text-xs text-muted-foreground">Interstate Transport</p>
-            </div>
+          <Link to="/" className="flex items-center ">
+            {/* Icon logo – always visible */}
+            <img
+              src={logoOnly}
+              alt="Overall Freight Carriers icon"
+              className="h-10 w-auto object-contain"
+            />
+
+            {/* Full logo text image – desktop only */}
+            <img
+              src={logoText}
+              alt="Overall Freight Carriers"
+              className="hidden sm:block h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,11 +45,10 @@ export const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`font-medium transition-colors duration-200 ${
-                  location.pathname === link.href
+                className={`font-medium transition-colors duration-200 ${location.pathname === link.href
                     ? "text-accent"
                     : "text-foreground hover:text-accent"
-                }`}
+                  }`}
               >
                 {link.name}
               </Link>
@@ -80,11 +87,10 @@ export const Header = () => {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`font-medium py-2 transition-colors duration-200 ${
-                    location.pathname === link.href
+                  className={`font-medium py-2 transition-colors duration-200 ${location.pathname === link.href
                       ? "text-accent"
                       : "text-foreground hover:text-accent"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
